@@ -4,6 +4,7 @@ import time
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 cap = cv2.VideoCapture(0)
+
 with mp_hands.Hands(
     min_detection_confidence=0.5,
     min_tracking_confidence=0.5) as hands:
@@ -28,4 +29,5 @@ with mp_hands.Hands(
         cv2.imshow('Hands', image)
         if cv2.waitKey(5) & 0xFF == 27:
           break
+        
 cap.release()
